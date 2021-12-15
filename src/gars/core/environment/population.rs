@@ -1,7 +1,6 @@
 use crate::core::environment::member::Member;
 
 pub struct Population<T> {
-    //
     members: Vec<Member<T>>,
 }
 
