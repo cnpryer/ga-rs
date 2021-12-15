@@ -17,7 +17,7 @@ impl MutationConfig {
 }
 
 #[allow(unused_variables)]
-pub fn mutate_genes<T>(genes: Genes<T>, config: Option<MutationConfig>) -> Genes<T> {
+pub fn mutate_genes<T>(genes: &Genes<T>, config: Option<MutationConfig>) -> Genes<T> {
     let mutation_config = config.unwrap_or(MutationConfig::new(DEFAULT_MUTATION_RATE));
     let new_genes = Genes::new(&Vec::new());
 

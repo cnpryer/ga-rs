@@ -19,7 +19,7 @@ The core is made up of the following logic:
 The initial population contains a vector of `members`.
 
 ```rs
-struct Population {
+struct Population<T> {
     members: Vec<Member<T>>
 }
 ```
@@ -51,7 +51,7 @@ struct Genes<T> {
 `Fitness` is used to evaluate a `Member` of a `Population` during `Selection`.
 
 ```rs
-fn evaluate_fitness<T>(member: &Member<T>) -> i32;
+fn evaluate_fitness<T>(member: &Member<T>) -> i32 {...}
 ```
 
 ### Selection
@@ -59,7 +59,7 @@ fn evaluate_fitness<T>(member: &Member<T>) -> i32;
 Choosing a pair of parents to breed is determined by using a `Selection` method.
 
 ```rs
-fn select_parents<T>(population: &Population<T>) -> [&Member<T>; 2];
+fn select_parents<T>(population: &Population<T>) -> [&Member<T>; 2] {...}
 ```
 
 ### Crossover
@@ -67,7 +67,7 @@ fn select_parents<T>(population: &Population<T>) -> [&Member<T>; 2];
 `Crossover` method determines the genetic material for a new `Member` of the next generation.
 
 ```rs
-fn create_child<T>(parent_a: &Member<T>, parent_b: &Member<T>) -> Member<T>;
+fn create_child<T>(parent_a: &Member<T>, parent_b: &Member<T>) -> Member<T> {...}
 ```
 
 ### Mutation
@@ -75,5 +75,5 @@ fn create_child<T>(parent_a: &Member<T>, parent_b: &Member<T>) -> Member<T>;
 `Mutation` refers to randomly mutated genetic material.
 
 ```rs
-fn mutate_genes<T>(genes: &Genes<T>) -> Genes<T>;
+fn mutate_genes<T>(genes: &Genes<T>) -> Genes<T> {...}
 ```
