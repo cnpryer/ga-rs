@@ -5,13 +5,6 @@ const TEST_DATA_SIZE: usize = 100;
 const TEST_DATA: [i32; TEST_DATA_SIZE] = [0; TEST_DATA_SIZE];
 
 #[test]
-fn test_get_version() {
-    let version = gars::get_version();
-
-    assert!(version != "unknown");
-}
-
-#[test]
 fn test_genes() {
     let data = TEST_DATA.to_vec();
     let genes = Genes::new(data);
